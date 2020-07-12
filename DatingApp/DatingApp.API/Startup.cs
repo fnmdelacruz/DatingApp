@@ -38,13 +38,13 @@ namespace DatingApp.API
 
             services.AddControllers();
 
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sample API", Version = "v1" });
-            //});
-            //services.AddMediatR(typeof(Startup));
-            //services.RegisterAutoMapper();
-            //RegisterServices(services);
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sample API", Version = "v1" });
+            });
+            services.AddMediatR(typeof(Startup));
+            services.RegisterAutoMapper();
+            RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,11 +55,11 @@ namespace DatingApp.API
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseSwagger();
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample API V1");
-            //});
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample API V1");
+            });
 
             app.UseHttpsRedirection();
 

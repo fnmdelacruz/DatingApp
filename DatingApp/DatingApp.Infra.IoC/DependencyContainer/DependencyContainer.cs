@@ -30,7 +30,7 @@ namespace DatingApp.Infra.IoC.DependencyContainer
 
             //Infra.Data Layer
             services.AddScoped<ISampleRepository, SampleRepository>();
-            //services.AddScoped<SampleDBContext>();
+            services.AddScoped<SampleDBContext>();
         }
     }
 }

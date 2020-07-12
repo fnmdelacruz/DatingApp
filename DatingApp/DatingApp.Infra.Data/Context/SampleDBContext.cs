@@ -11,7 +11,6 @@ namespace DatingApp.Infra.Data.Context
         public SampleDBContext(DbContextOptions options) : base(options)
         {
         }
-
         public DbSet<Sample> Samples { get; set; }
     }
 
